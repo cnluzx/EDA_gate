@@ -8,8 +8,8 @@
 
 //designed by oypp 独热码
 
-//问题：试验箱不能正常表示10101 闪烁两次
-
+//问题：试验箱不能正常表示10101 闪烁两次可以实现101101
+//无法正常运行
 
 
 module lzx_fsm(clk,rst,ina,dataout)
