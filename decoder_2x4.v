@@ -1,19 +1,12 @@
-module lzx_decoder2x4( a, b, en, y );
-    input a,b,en;
-    output reg [3:0] y;
-    reg af ,bf ;
+module lzx_decoder2x4(a,b,en,y);
+    input a;
+    input b;
+    input en;
+    output [3:0] y;
 
-always 
-    @(a or b or en )
-begin 
-af = ~ a ;
-bf = ~ b ;
-y[0]<= ~ (af & bf & en ) ;
-y[1]<= ~ (af & b & en ) ;
-y[2]<= ~ (a & bf & en ) ;
-y[3]<= ~ (a & b & en ) ;
-
-
-end 
+    assign y[0] = ~(~a & ~b & en);
+    assign y[1] = ~(~a &  b & en);
+    assign y[2] = ~( a & ~b & en);
+    assign y[3] = ~( a &  b & en);
 
 endmodule
