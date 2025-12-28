@@ -1,13 +1,12 @@
-module lzx_BasGate (A,B,Y1,Y2,Y3,Y4,Y5,Y6);
+module lzx_BasGate(A,B,Y1,Y2,Y3,Y4,Y5,Y6);
     input A,B;
-    output reg Y1,Y2,Y3,Y4,Y5,Y6;
-always @(A,B)
-begin
-    Y1  <= A & B;
-    Y2  <= ~(A & B);
-    Y3  <= A ||B ;
-    Y4  <=~(A||B);
-    Y5  <= A ^ B;  
-    Y6  <= ~ A ;
-end 
+    output Y1,Y2,Y3,Y4,Y5,Y6;
+
+    assign Y1 = A & B;      
+    assign Y2 = ~(A & B);  
+    assign Y3 = A | B;      
+    assign Y4 = ~(A | B);   
+    assign Y5 = A ^ B;      
+    assign Y6 = ~A;         
+
 endmodule
