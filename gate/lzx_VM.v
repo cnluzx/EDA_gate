@@ -1,11 +1,11 @@
 
-module lzx_VM(
+module lzx_VM(clk, rst_n, In, D_out, C);
     input         clk;        
     input         rst_n;     
     input  [1:0]  In;        
     output reg    D_out;     
     output reg    C;          
-);
+
 
 
 parameter s0 = 5'b00001,  // 0
